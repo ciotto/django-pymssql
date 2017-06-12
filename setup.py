@@ -15,7 +15,7 @@ with codecs.open(os.path.join(root_dir, 'README.rst'), encoding='utf-8') as f:
 
 setuptools.setup(
     name='django-pymssql',
-    version='1.7.1',
+    version='1.11.0',
     description=description,
     long_description=long_description,
     url='https://github.com/aaugustin/django-pymssql',
@@ -26,7 +26,7 @@ setuptools.setup(
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.7',
+        'Framework :: Django :: 1.11',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
@@ -34,7 +34,7 @@ setuptools.setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.6',
     ],
     packages=[
         'sqlserver_pymssql',

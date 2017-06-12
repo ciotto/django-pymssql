@@ -126,7 +126,7 @@ class DatabaseWrapper(_DatabaseWrapper):
         # Not calling super() because we don't care much about version checks.
         pass
 
-    def create_cursor(self):
+    def create_cursor(self, name=None):
         cursor = self.connection.cursor()
         return CursorWrapper(cursor)
 
