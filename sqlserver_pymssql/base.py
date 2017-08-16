@@ -10,8 +10,8 @@ from sqlserver_ado.base import (
     DatabaseFeatures as _DatabaseFeatures,
     DatabaseOperations as _DatabaseOperations,
     DatabaseWrapper as _DatabaseWrapper)
-from sqlserver_ado.introspection import _DatabaseIntrospection
-from sqlserver_ado.creation import _DatabaseCreation
+from sqlserver_ado.introspection import DatabaseIntrospection as _DatabaseIntrospection
+from sqlserver_ado.creation import DatabaseCreation as _DatabaseCreation
 DatabaseError = Database.DatabaseError
 IntegrityError = Database.IntegrityError
 
