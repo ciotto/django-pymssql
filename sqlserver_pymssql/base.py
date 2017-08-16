@@ -1,6 +1,8 @@
 import datetime
 
 from django.utils import timezone
+from django.db.backends.base.client import BaseDatabaseClient
+from django.db.backends.base.validation import BaseDatabaseValidation
 
 import pymssql as Database
 
@@ -8,7 +10,8 @@ from sqlserver_ado.base import (
     DatabaseFeatures as _DatabaseFeatures,
     DatabaseOperations as _DatabaseOperations,
     DatabaseWrapper as _DatabaseWrapper)
-
+from sqlserver_ado.introspection import _DatabaseIntrospection
+from sqlserver_ado.creation import _DatabaseCreation
 DatabaseError = Database.DatabaseError
 IntegrityError = Database.IntegrityError
 
@@ -99,6 +102,13 @@ class DatabaseFeatures(_DatabaseFeatures):
 class DatabaseWrapper(_DatabaseWrapper):
 
     Database = Database
+
+    features = DatabaseFeatures
+    ops = DatabaseOperations
+    client = BaseDatabaseClient
+    creation = _DatabaseCreation
+    introspection = _DatabaseIntrospection
+    validation = BaseDatabaseValidation
 
     def __init__(self, *args, **kwargs):
         super(DatabaseWrapper, self).__init__(*args, **kwargs)
